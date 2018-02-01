@@ -3,11 +3,22 @@
 <html>
 
 <head>
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-2061141398222316",
+    enable_page_level_ads: true
+  });
+</script>
     <meta http-equiv="content-type" content="text/html" charset="utf-8" />
     <meta lang="en" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- STYLESHEETS -->
     <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/style.css" />
+    <link rel="shortcut icon" href="<?php bloginfo('template_directory');?>/favicon.ico" />
     <!-- FONT SHEETS -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">

@@ -28,7 +28,7 @@ body {
 
 .wrapper {
     display: grid;
-    grid-template-columns: 0.01fr 1fr 0.01fr;
+    grid-template-columns: 5px 1fr 5px;
     grid-template-rows: 210px 1fr 20px;
     min-height: 100vh;
 }
@@ -226,4 +226,27 @@ img {
 
 .postInformation {
     margin-bottom: 10px;
+}
+
+.adsbygoogle {
+    width: 80%;
+    overflow: hidden;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+    padding: 35px 30px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.sadMessage {
+    font-family: "Quando", serif;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    padding: 35px 30px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
 }
