@@ -1,0 +1,19 @@
+{% extends "base.twig" %}
+{% block content %}
+<div class="post_wrapper">
+
+    <div class="post">
+        <div class="post-information">
+            <a class="post-link" href="{{post.link}}">{{post.title}}</a>
+            <div class="post-date">{{post.date}}</div>
+           
+        </div>
+         <div class="post-sep"></div>
+        <div class="post-content">
+        {{ post.content }}
+        </div>
+        <a class="post-button" href="{{site.link}}">Back</a>
+    </div>
+    
+</div>
+{% endblock %}

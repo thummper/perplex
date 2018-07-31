@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="{{ site.charset }}"/>
+    <meta lang="en" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="canonical" href="www.perplex.space" />
+        <!-- FONT SHEETS -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    
+    
+
+    
+    <link rel="shortcut icon" href="{{ theme.link }}/assets/images/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="{{ theme.link }}/style.css" />
+    
+    <title>Perplexing you since 2017</title>
+    
+    
+    <!-- Analytics -->
+    <title>
+    {% if wp_title %}
+        {{ wp_title }} - {{site.name}}
+    {% else %}
+        {{ site.name }}
+    {% endif %}
+    </title>
+    <!-- Meta tags and style sheets -->
+</head>
+{{function('wp_head')}}

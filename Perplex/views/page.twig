@@ -1,0 +1,22 @@
+{% extends "base.twig" %}
+{% block content %}
+<div class="post_wrapper">
+{% if posts %}
+    {% for post in posts %}
+    <div class="post">
+        <div class="post-information">
+            <a class="post-link" href="{{post.link}}">{{post.title}}</a>
+            <div class="post-date">{{post.date}}</div>
+           
+        </div>
+         <div class="post-sep"></div>
+        <div class="post-content">
+        {{ post.preview.length(60).end(" [...]").read_more('') }}
+        </div>
+        <a class="post-button" href="{{post.link}}">Read More</a>
+    </div>
+    
+    {% endfor %}
+{% endif %}
+</div>
+{% endblock %}
