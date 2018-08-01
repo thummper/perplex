@@ -1,10 +1,56 @@
-{% extends "base.twig" %}
-{% block content %}
+{% extends "base.twig" %} {% block content %}
 <div class="content_wrapper">
-<h1>Home</h1>
+
+
+    <!-- Display first 3 posts and link for user -->
+    <div class="post-wrapper wrapper">
+        <div class="title-sep"></div>
+        <div class="wrapper-title">Posts</div>
+        
+        {% for post in posts %}
+        <div class="post">
+            <div class="post-information">
+                <a class="post-link" href="{{post.link}}">{{post.title}}</a>
+                <div class="post-date">{{post.date}}</div>
+            </div>
+            <div class="post-sep"></div>
+            <div class="post-content">
+                {{ post.preview.length(30).end(" [...]").read_more('') }}
+            </div>
+            <a class="post-button" href="{{post.link}}">Read More</a>
+        </div>
+
+
+        {% endfor %}
+        
+        <a class="more_posts" href="./posts">More Posts</a>
+    </div>
     
-    <a href="{{site.link}}/posts">Posts</a>
-    <a href="{{site.link}}/games">Games</a>
+    
+    
+        <!-- Display first 3 games and display link for user -->
+
+    <div class="game-wrapper wrapper">
+        <div class="title-sep"></div>
+        <div class="wrapper-title">Games</div>
+        {% for game in games %}
+        <div class="game">
+        <div class="game-information">
+            <div class="game-title"> {{game.title}} </div>    
+        </div>
+        <div class="game-content">
+        <!-- Thumbnail here? -->    
+            
+        </div>
+        </div>
+        
+        
+        {% endfor %}
+          <a class="more_posts" href="./posts">More Games</a>
+    </div>
+
+
+
 
 
 </div>
