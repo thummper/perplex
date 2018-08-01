@@ -3,10 +3,13 @@
 
 
     <!-- Display first 3 posts and link for user -->
+    <div class="title">
+    <div class="title-sep"></div>
+    <div class="wrapper-title">Posts</div>
+    </div>
     <div class="post-wrapper wrapper">
-        <div class="title-sep"></div>
-        <div class="wrapper-title">Posts</div>
-        
+
+
         {% for post in posts %}
         <div class="post">
             <div class="post-information">
@@ -22,31 +25,39 @@
 
 
         {% endfor %}
-        
-        <a class="more_posts" href="./posts">More Posts</a>
-    </div>
-    
-    
-    
-        <!-- Display first 3 games and display link for user -->
 
+    </div>
+      <div class="title">
+    <div class="title-sep"></div>
+    <a class="more_posts" href="./posts">More Posts</a>
+    </div>
+
+
+    <!-- Display first 3 games and display link for user -->
+      <div class="title">
+    <div class="title-sep"></div>
+    <div class="wrapper-title">Games</div>
+    </div>
     <div class="game-wrapper wrapper">
-        <div class="title-sep"></div>
-        <div class="wrapper-title">Games</div>
+
         {% for game in games %}
         <div class="game">
-        <div class="game-information">
-            <div class="game-title"> {{game.title}} </div>    
+            <div class="game-information">
+                <div class="game-title"> {{game.title}} </div>
+            </div>
+            <div class="game-content">
+                <!-- Thumbnail here? -->
+
+            </div>
         </div>
-        <div class="game-content">
-        <!-- Thumbnail here? -->    
-            
-        </div>
-        </div>
-        
-        
+
+
         {% endfor %}
-          <a class="more_posts" href="./posts">More Games</a>
+
+    </div>
+      <div class="title">
+    <div class="title-sep"></div>
+    <a class="more_posts" href="./posts">More Games</a>
     </div>
 
 
