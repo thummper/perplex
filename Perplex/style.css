@@ -17,6 +17,8 @@ Version: 1.1
     --lightpurple: #1f1f60;
 }
 
+
+
 html {
     height: 100%;
 }
@@ -61,13 +63,15 @@ header {
  
 }
 
+
 main {
     flex: 1;
     
 }
 .content_wrapper{
-        display: flex;
+    display: flex;
     flex-direction: column;
+	margin: 30px auto;
 }
 footer {
     height: 20px;
@@ -125,11 +129,9 @@ footer {
     margin: 0px auto;
     margin-bottom: 12px;
 }
-.title{
-        width: 90%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
+
+.game-title-sec{
+	margin-top: 300px;
 }
 .post-button {
   
@@ -149,30 +151,20 @@ footer {
 
 .wrapper {
     width: 90%;
-    margin: 80px auto;
-    margin-bottom: 100px;
+    margin: 0 auto;
     border-radius: 4px;
     display: flex;
     flex-direction: column;
     padding: 16px 16px;
 }
-.title-sep {
-    width: 100%;
-    height: 4px;
-    border-radius: 4px;
-    margin: 0 auto;
-    background-color: var(--purple);
+
+.content-sep{
+    padding: 10px 0;
 }
-.wrapper .post {
-    padding: 10px 10px;
-}
-.wrapper .post-link{
-    font-size: 24px;
+.content_wrapper > .content-sep ~ .content-sep{
+   margin: 54px 0;  
 }
 
-.post:nth-last-child(3) {
-   margin-bottom: 100px;
-}
 .wrapper-title, .more_posts {
     font-size: 18px;
     font-family: "Quando", serif;
@@ -185,11 +177,41 @@ footer {
     font-weight: bolder;
     border-radius: 4px;
     text-shadow: 0 0 8px rgba(255,255,255,0.6);
-    margin-top: -20px;
+    margin-top: -24px;
     text-decoration: none;
     align-self: center; 
     display: flex;
 }
+.title{
+    width: 90%;
+    margin: 30px auto;
+	margin-top: 50px; 	 
+    display: flex;
+    flex-direction: column;
+}
+.title-sep {
+    width: 100%;
+    height: 6px;
+    border-radius: 4px;
+    margin: 0 auto;
+    background-color: var(--purple);
+}
+.title-bottom-sep {
+    width: 60%;
+    margin: 0 auto;
+    background-color: var(--purple);
+}
+.wrapper .post {
+    padding: 10px 10px;
+}
+.wrapper .post-link{
+    font-size: 24px;
+}
+
+.post:nth-last-child(3) {
+   margin-bottom: 60px;
+}
+
 
 .more_posts:hover {
     background-color: var(--darkpurple);
@@ -197,19 +219,34 @@ footer {
 
 .game-wrapper {
     width: 90%;
-    margin: 0 auto;
+    margin: 40px auto;
     display: flex;
     flex-wrap: wrap;
-
+	flex-direction: row;
+	justify-content: space-around;
     position: relative;
 }
 .game{
     display: flex;
+	flex-direction: column;
     margin: 24px 16px;
-    width: 40%;
     padding: 8px 8px;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     cursor: pointer;
+	min-height: 200px;
+	border-radius: 8px;
+	text-decoration: none;
+	color: black;
+	font-weight: bold;
+}
+.game-title{
+	font-family: "Quando", serif;
+	text-align: center;
+	padding: 10px 10px;
+	font-size: 20px;
+}
+.game-content {
+	margin: auto auto;
 }
 
 .game:hover {
@@ -217,5 +254,72 @@ footer {
     top: -4px;
 
 }
+.title {
+    padding: 40px 10px;
+}
 
+.title-bottom {
+	margin: 20px auto;
+}
 
+/* Game card styling */
+.card {
+    margin-top: 40px;
+    height: 300px;
+    width: 200px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: solid 3px rgba(28,29,86, 0.45);
+    border-radius: 4px;
+    transition: 0.6 all ease;
+    
+}
+.card-top {
+    transition: 0.4s all ease;
+    height: 65%;
+    padding: 8px;
+}
+.card-top-image {
+    width: 100%;
+    height: 100%;
+   
+}
+.card-bottom {
+    height: 35%;
+    transition: 0.4s all ease;
+}
+.card-text {
+    min-height: 100%;
+    padding: 20px;
+}
+.cardTitle {
+    font-size: 24px;
+    font-family: "Quando", serif;
+    font-weight: bolder;
+    text-align: center;
+}
+.cardInfo {
+    padding-top: 10px;
+    font-size: 18px;
+    font-weight: 500;
+}
+.card-hover-text {
+    visibility: hidden;
+}
+.card:hover {
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.3);
+}
+.card:hover .card-hover-text{
+    visibility: visible;
+    transition: all 0.4s ease;
+    transition-delay: 0.2s;
+}
+.card:hover .card-bottom {
+    transition: 0.4s all ease;
+    height: 65%;
+    opacity: 1;
+}
+.card:hover .card-top{
+    height: 35%;
+    opacity: 0.8;
+    transition: 0.4s all ease;
+}

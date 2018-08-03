@@ -3,69 +3,66 @@
 
 
     <!-- Display first 3 posts and link for user -->
-    <div class="title">
-    <div class="title-sep"></div>
-    <div class="wrapper-title">Posts</div>
-    </div>
-    <div class="post-wrapper wrapper">
-
-
-        {% for post in posts %}
-        <div class="post">
-            <div class="post-information">
-                <a class="post-link" href="{{post.link}}">{{post.title}}</a>
-                <div class="post-date">{{post.date}}</div>
+    <div class="content-sep">
+            <div class="title">
+                <div class="title-sep"></div>
+                <div class="wrapper-title">Posts</div>
             </div>
-            <div class="post-sep"></div>
-            <div class="post-content">
-                {{ post.preview.length(30).end(" [...]").read_more('') }}
+            <div class="post-wrapper wrapper">
+                {% for post in posts %}
+                <div class="post">
+                    <div class="post-information">
+                        <a class="post-link" href="{{post.link}}">{{post.title}}</a>
+                        <div class="post-date">{{post.date}}</div>
+                    </div>
+                    <div class="post-sep"></div>
+                    <div class="post-content">
+                        {{ post.preview.length(30).end(" [...]").read_more('') }}
+                    </div>
+                    <a class="post-button" href="{{post.link}}">Read More</a>
+                </div>
+                {% endfor %}
             </div>
-            <a class="post-button" href="{{post.link}}">Read More</a>
-        </div>
-
-
-        {% endfor %}
-
-    </div>
-      <div class="title">
-    <div class="title-sep"></div>
-    <a class="more_posts" href="./posts">More Posts</a>
-    </div>
-
-
-    <!-- Display first 3 games and display link for user -->
-      <div class="title">
-    <div class="title-sep"></div>
-    <div class="wrapper-title">Games</div>
-    </div>
-    <div class="game-wrapper wrapper">
-
-        {% for game in games %}
-        <div class="game">
-            <div class="game-information">
-                <div class="game-title"> {{game.title}} </div>
-            </div>
-            <div class="game-content">
-                <!-- Thumbnail here? -->
-
+            <div class="title title-bottom">
+                <div class="title-sep title-bottom-sep"></div>
+                <a class="more_posts" href="./posts">More Posts</a>
             </div>
         </div>
 
-
-        {% endfor %}
-
+        <!-- Display first 3 games and display link for user -->
+        <div class="content-sep">
+            
+            
+        <div class="title game-title-sec">
+            <div class="title-sep"></div>
+            <div class="wrapper-title">Games</div>
+        </div>
+            
+            
+        <div class="game-wrapper wrapper">
+            {% for game in games %}
+            <div class="card">
+                <div class="card-top">
+                    <img src="{{site.link}}/wp-content/themes/Perplex/assets/{{game.slug}}.gif" class="card-top-image">
+                </div>
+                <div class="card-bottom">
+                    <div class="card-text">
+                        <h3 class="cardTitle">{{game.title}}</h3>
+                        
+                        <div class="card-hover-text">
+                        This is hover text.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+            
+        <div class="title title-bottom">
+            <div class="title-sep title-bottom-sep"></div>
+            <a class="more_posts" href="./games">More Games</a>
+        </div>
     </div>
-      <div class="title">
-    <div class="title-sep"></div>
-    <a class="more_posts" href="./posts">More Games</a>
-    </div>
-
-
-
-
-
+    
 </div>
-
-
-
 {% endblock %}
