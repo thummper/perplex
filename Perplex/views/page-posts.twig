@@ -1,0 +1,25 @@
+{% extends "base.twig" %}
+
+
+
+{% block main %}
+    <main class="whiteWrapper">
+        <div class="contentWrapper">
+
+            <div class="headingWrapper">
+                <h1 class="mainHeading"> Recent Posts </h1>
+                <div class="headerSep"></div>
+            </div>
+
+<div class="postWrapper">
+{% if posts %}
+    {% for post in posts %}
+    {% include 'small-post.twig' %}
+    {% endfor %}
+{% endif %}
+</div>
+{% include 'components/pagination.twig' %}
+
+</div>
+</main>
+{% endblock %}

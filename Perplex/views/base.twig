@@ -3,18 +3,32 @@
 {% endblock %}
 
 <body>
+    <div class="backgroundImage" style="background-image: url({{header_image}})"></div>
+    {% block header %}
+        {% include 'header.twig' %}
+    {%endblock%}
+
+
+    {% block main %}
+    {% endblock %}
+
+
     
+
+
+
+    {% block footer %}
+    {% include 'footer.twig' %}
+    {{function('wp_footer')}}
+    {% endblock %}
     
-    {% block header %} {% include 'header.twig' %} {%endblock%}
-
-
-
-    <main class="main_content">
-        {% block content %} {% endblock %}
-    </main>
-    {% block footer %} {% include 'footer.twig' %} {{function('wp_footer')}} {% endblock %}
+    </div> {# End main wrapper from header #}
 </body>
 <script>
+    window.addEventListener('scroll', function(){
+        if(pageYOffset < 300){
+            //document.getElementsByClassName('header-scroll-image')[0].style.marginTop = ((pageYOffset / 2.5) * -1) + "px";
+            };
+        });
 </script>
-
 </html>

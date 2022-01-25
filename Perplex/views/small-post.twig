@@ -1,0 +1,16 @@
+                <a href="{{post.link}} "class="smallPost">
+                    <div class="postInformation">
+                        <h3 class="postTitle"> {{post.post_title}} </h3>
+                        <div class="postDate"> {{post.post_date|date("m/d/Y")}}</div>
+                    </div>
+                    <div class="postSep"></div>
+					<div class="postCats">
+						{% for term in post.terms('category') %}
+							<div class="postCat"> {{term.name}} </div>
+						{% endfor %}
+					</div>
+
+                    <div class="postContent">
+                        {{ post.preview.length(60).end(" [...]").read_more('') }}
+                    </div>
+                </a>

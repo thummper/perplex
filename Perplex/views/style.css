@@ -1,0 +1,203 @@
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  text-size-adjust: auto; }
+
+html {
+  height: 100%; }
+
+body {
+  min-height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column; }
+
+.backgroundImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-attachment: fixed;
+  background-image: url("../nebula.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -10; }
+
+.whiteWrapper {
+  border-radius: 2px;
+  margin: 0 auto;
+  width: 95%;
+  min-height: 800px;
+  background: white;
+  margin-bottom: 20px; }
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px; }
+
+.logoWrapper {
+  max-width: 80%;
+  background: rgba(0, 0, 0, 0.45);
+  padding: 20px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+  .logoWrapper img {
+    max-width: 500px;
+    width: 100%;
+    height: auto; }
+  .logoWrapper .logoSlogan {
+    margin-top: 24px;
+    font-size: 1.6em;
+    font-weight: 800;
+    font-family: 'Roboto', sans-serif;
+    text-align: center; }
+
+footer {
+  margin-top: auto;
+  width: 100%;
+  height: 60px;
+  margin-top: 100px;
+  background: rgba(0, 0, 0, 0.95); }
+
+.contentWrapper {
+  max-width: 1400px;
+  width: 96%;
+  margin: 0 auto;
+  margin-top: 48px;
+  margin-bottom: 48px; }
+
+.projectWrapper {
+  height: 320px; }
+
+.emptyWrapper, .projectWrapper {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center; }
+
+.emptyWrapper {
+  justify-content: center;
+  margin: 12px;
+  border-radius: 10px;
+  height: 300px;
+  background-image: url("../nothere.jpg");
+  background-size: cover;
+  background-repeat: no-repeat; }
+
+.emptyMessage {
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  color: white; }
+
+.headingWrapper:not(:first-child) {
+  margin-top: 100px; }
+
+.headerSep {
+  width: 50%;
+  height: 4px;
+  border-radius: 20px;
+  background: black;
+  margin-bottom: 30px; }
+
+.mainHeading, .subHeading {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 450; }
+
+.mainHeading {
+  font-size: 36px; }
+
+.subHeading {
+  font-size: 22px; }
+
+.projectCard {
+  transition: all 0.2s;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 4px;
+  width: 275px;
+  height: 320px;
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .projectCard:hover {
+    margin-top: -14px; }
+  .projectCard:not(:last-child) {
+    margin-right: 50px; }
+  .projectCard .title {
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5em;
+    padding: 20px 0px; }
+  .projectCard .short {
+    margin: 0 auto;
+    margin-top: 40%;
+    width: 80%;
+    font-family: 'Roboto Slab', serif;
+    padding: 8px;
+    background: rgba(0, 0, 0, 0.7); }
+
+.postWrapper {
+  display: flex;
+  flex-direction: column; }
+
+.smallPost {
+  text-decoration: none;
+  color: black;
+  background: white;
+  margin: 50px auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+  .smallPost .postInformation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 16px; }
+    .smallPost .postInformation .postTitle {
+      font-size: 1.6em;
+      font-family: 'Roboto', sans-serif;
+      font-weight: bold; }
+    .smallPost .postInformation .postDate {
+      font-size: 1.1em;
+      font-family: 'Roboto Slab', serif; }
+  .smallPost .postSep {
+    margin: 0 auto;
+    width: 90%;
+    height: 4px;
+    border-radius: 8px;
+    background-color: black; }
+  .smallPost .postContent {
+    font-family: 'Roboto Slab', serif;
+    width: 85%;
+    margin: 0 auto;
+    padding: 50px 20px;
+    font-size: 1.1em; }
+
+.viewMore {
+  padding: 20px;
+  background: black;
+  border-radius: 4px;
+  margin: 12px auto;
+  font-family: "Roboto Slab"; }
+
+@media screen and (max-width: 850px) {
+  header > .logoWrapper > .logoSlogan {
+    font-size: 0; }
+  body > header {
+    padding: 10px; }
+  .contentWrapper {
+    width: 100%; }
+    .contentWrapper .emptyWrapper {
+      margin: 0;
+      height: 400px; }
+  .mainHeading {
+    margin-left: 0.9em; } }

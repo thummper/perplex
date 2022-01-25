@@ -11,17 +11,9 @@ $args = array(
     'paged' => $paged
     );
 $context['posts'] = new Timber\PostQuery($args);
-$context['header_image'] = get_site_url() . "/wp-content/themes/Perplex/assets/tilt-min.jpg";
-
-
-
-
-
-//Get all posts.
-
 
 
 //Send posts to frontend.
-Timber::render( "page.twig", $context);
+Timber::render( "page-posts.twig", $context);
 
 ?>

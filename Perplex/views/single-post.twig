@@ -1,19 +1,21 @@
 {% extends "base.twig" %}
-{% block content %}
-<div class="post_wrapper">
+{% block main %}
+<main class="whiteWrapper">
+    <div class="singlePostWrapper">
+        <div class="post">
+            <div class="postInformation">
+                <a class="postTitle" href="{{post.link}}">{{post.title}}</a>
+                <div class="postDate">
+                    {{post.date}}
+                </div>
+            </div>
+            <div class="postSep"></div>
+            <div class="postContent">
+                {{post.content}}
+            </div>
+            <a class="postButton" href="{{site.link}}"> Back </a>
 
-    <div class="post">
-        <div class="post-information">
-            <a class="post-link" href="{{post.link}}">{{post.title}}</a>
-            <div class="post-date">{{post.date}}</div>
-           
         </div>
-         <div class="post-sep"></div>
-        <div class="post-content">
-        {{ post.content }}
-        </div>
-        <a class="post-button" href="{{site.link}}">Back</a>
     </div>
-    
-</div>
+</main>
 {% endblock %}

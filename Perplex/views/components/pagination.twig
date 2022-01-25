@@ -1,0 +1,33 @@
+{% if posts.pagination %}
+<div class="tool-pagination">
+    <ul class="pagination-list">
+        {% if posts.pagination.prev.link %}
+        <li>
+            <a href="{{posts.pagination.prev.link}}" class="pagination-previous">
+                Â« Prev
+            </a>
+        </li>
+        {% endif %}
+        {% for page in posts.pagination.pages %}
+        {% if page.link %}
+        <li>
+            <a class="pagination-link" href="{{page.link}}">
+                {{page.title}}
+            </a>
+        </li>
+        {% else %}
+        <li>
+            <span class="pagination-not-link">{{page.title}}</span>
+        </li>
+        {% endif %}
+        {% endfor %}
+        {% if posts.pagination.next %}
+        <li>
+            <a class="pagination-next" href="{{posts.pagination.next.link}}">
+                Next Â»
+            </a>
+        </li>
+        {% endif %}
+    </ul>
+</div>
+{% endif %}

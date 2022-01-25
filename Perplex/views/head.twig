@@ -1,43 +1,32 @@
 <!DOCTYPE html>
 <head>
-    
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-63511265-3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-63511265-3');
-</script>
+    {# Analytics Stuff  #}
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-63511265-3"></script>
+	<script>
+  		window.dataLayer = window.dataLayer || [];
+  		function gtag(){dataLayer.push(arguments);}
+  		gtag('js', new Date());
+  		gtag('config', 'UA-63511265-3');
+	</script>
+    {# End Analytics #}
+	
+    {# Meta Stuff #}
     <meta charset="{{ site.charset }}"/>
     <meta lang="en" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="canonical" href="www.perplex.space" />
-	<link rel="stylesheet" href="{{theme.link}}/style.css">
-        <!-- FONT SHEETS -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
-    
-    
+    {# End Meta #}
 
-    
+    {# Stylesheets #}
+    <link rel="canonical" href="https://perplex.space" />
+	<link rel="stylesheet" href="{{theme.link}}/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="{{ theme.link }}/assets/favicon.ico" type="image/x-icon"/>
-  
-    
+    {# End sheets #}
     <title>Perplexing you since 2017</title>
-    
-    
-    <!-- Analytics -->
-    <title>
-    {% if wp_title %}
-        {{ wp_title }} - {{site.name}}
-    {% else %}
-        {{ site.name }}
-    {% endif %}
-    </title>
-    <!-- Meta tags and style sheets -->
+    {{function('wp_head')}}
 </head>
-{{function('wp_head')}}
+

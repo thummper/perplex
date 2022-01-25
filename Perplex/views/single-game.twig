@@ -1,0 +1,46 @@
+{% extends "base.twig" %}
+{% block main %}
+<main class="whiteWrapper">
+    <div class="singlePostWrapper">
+        <div class="post">
+            <div class="postInformation">
+                <a class="postTitle" href="{{post.link}}">{{post.title}}</a>
+
+            </div>
+            <div class="postSep"></div>
+            <div class="postContent">
+                {{post.content}}
+            
+
+
+            {% if gamePosts|length == 0 %}
+
+            <div class="emptyWrapper" style="background-image: url({{emptyImage}});">
+                <div class="emptyBackground" ></div>
+                <div class="emptyMessage">
+                    <div class="subHeading"> There's nothing here yet! </div>
+                </div>
+            </div>
+
+            {% else %}
+
+
+            <div class="postWrapper">
+            {% for post in gamePosts %}
+
+            {% include 'small-post.twig' %}
+
+            {% endfor %}
+            </div>
+
+            {% endif %}
+
+            </div>
+
+
+            <a class="postButton marginBottom" href="{{site.link}}"> Back </a>
+
+        </div>
+    </div>
+</main>
+{% endblock %}

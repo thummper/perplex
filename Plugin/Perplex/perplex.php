@@ -8,7 +8,7 @@ Author: Aron Bettison
 Author URI: www.thummper.net
 */
 
-if( !class_exists('plife') ):
+if( !class_exists('pplx') ):
 
 class pplx {
     
@@ -33,7 +33,8 @@ class pplx {
     */
     function init(){
         //Register post types. 
-        register_post_type( 'games',
+		wp_enqueue_style( 'dashicons' );
+        register_post_type( 'game',
                            array(
                                'labels' => array(
                                    'name' => __('Games'),
@@ -42,9 +43,31 @@ class pplx {
                                'public' => true,
                                'has archive' => true,
                                'menu_icon' => 'dashicons-desktop',
-                               'menu_position' => 3
+                               'menu_position' => 3,
+                               'taxonomies' => array('category'),
                            )
-                          );
+						  );
+		//Filters 
+		add_filter( 'timber/context', array($this, 'perplex_context'), 1);
+    }
+
+	function perplex_context(){
+		$context = Timber::get_context();
+		$context['header_image'] = $this->get_header_image();
+		return $context;
+    }
+    
+    function get_header_image(){
+        $url = get_site_url() . "/wp-content/themes/Perplex/assets/headers/";
+        $headerImages = [
+            $url . "orion-nebula.jpg",
+            $url . "nebula.jpg",
+            $url . "nebula1.jpg",
+            $url . "nebula2.jpg",
+            $url . "quasar.jpg",
+        ];
+        $rand = array_rand($headerImages);
+        return $headerImages[$rand];
     }
     
   
@@ -65,4 +88,3 @@ function pplx(){
 //Initialise
 pplx(); 
 endif;
-?>

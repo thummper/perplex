@@ -1,68 +1,99 @@
-{% extends "base.twig" %} {% block content %}
-<div class="content_wrapper">
+{% extends "base.twig" %}
+{% block main %}
+    <main class="whiteWrapper">
+        <div class="contentWrapper">
 
-
-    <!-- Display first 3 posts and link for user -->
-    <div class="content-sep">
-            <div class="title">
-                <div class="title-sep"></div>
-                <div class="wrapper-title">Posts</div>
+            <div class="headingWrapper">
+                <h1 class="mainHeading"> In Development ({{games|length}}) </h1>
+                <div class="headerSep"></div>
             </div>
-            <div class="post-wrapper wrapper">
-                {% for post in posts %}
-                <div class="post">
-                    <div class="post-information">
-                        <a class="post-link" href="{{post.link}}">{{post.title}}</a>
-                        <div class="post-date">{{post.date}}</div>
-                    </div>
-                    <div class="post-sep"></div>
-                    <div class="post-content">
-                        {{ post.preview.length(30).end(" [...]").read_more('') }}
-                    </div>
-                    <a class="post-button" href="{{post.link}}">Read More</a>
+
+            {% if games|length == 0 %}
+            <div class="emptyWrapper" style="background-image: url({{emptyImage}});">
+                <div class="emptyBackground" ></div>
+                <div class="emptyMessage">
+                    <div class="subHeading"> There's nothing here yet! </div>
                 </div>
+            </div>
+            {% else %}
+            <div class="projectWrapper">
+                {% for game in games %}
+                    <a href="{{game.link}}" class="projectCard" style="background-image: url({{game.game_image}})">
+                        <div class="title">
+                            {{game.post_title}}
+                        </div>
+                        <div class="short">
+                            {{game.game_short}}
+                        </div>
+
+                    </a>
                 {% endfor %}
             </div>
-            <div class="title title-bottom">
-                <div class="title-sep title-bottom-sep"></div>
-                <a class="more_posts" href="./posts">More Posts</a>
-            </div>
-        </div>
+            {% endif %}
 
-        <!-- Display first 3 games and display link for user -->
-        <div class="content-sep">
-            
-            
-        <div class="title game-title-sec">
-            <div class="title-sep"></div>
-            <div class="wrapper-title">Games</div>
-        </div>
-            
-            
-        <div class="game-wrapper wrapper">
-            {% for game in games %}
-            <div class="card">
-                <div class="card-top">
-                    <img src="{{site.link}}/wp-content/themes/Perplex/assets/{{game.slug}}.gif" class="card-top-image">
-                </div>
-                <div class="card-bottom">
-                    <div class="card-text">
-                        <h3 class="cardTitle">{{game.title}}</h3>
-                        
-                        <div class="card-hover-text">
-                        This is hover text.
-                        </div>
-                    </div>
+
+            <div class="headingWrapper">
+                <h1 class="mainHeading"> Planned Games ({{plannedGames|length}}) </h1>
+                <div class="headerSep"></div>
+            </div>
+            {% if plannedGames|length == 0 %}
+            <div class="emptyWrapper" style="background-image: url({{emptyImage}});">
+                <div class="emptyBackground" ></div>
+                <div class="emptyMessage">
+                    <div class="subHeading"> There's nothing here yet! </div>
                 </div>
             </div>
-            {% endfor %}
+            {% else %}
+            <div class="projectWrapper">
+                {% for game in plannedGames %}
+                    <a href="{{game.link}}" class="projectCard" style="background-image: url({{game.game_image}})">
+                        <div class="title">
+                            {{game.post_title}}
+                        </div>
+                        <div class="short">
+                            {{game.game_short}}
+                        </div>
+
+                    </a>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+
+
+
+            <div class="headingWrapper">
+                <h1 class="mainHeading"> Released ({{doneGames|length}}) </h1>
+                <div class="headerSep"></div>
+            </div>
+            {% if doneGames|length == 0 %}
+            <div class="emptyWrapper" style="background-image: url({{emptyImage}});">
+                <div class="emptyBackground" ></div>
+                <div class="emptyMessage">
+                    <div class="subHeading"> There's nothing here yet! </div>
+                </div>
+            </div>
+            {% else %}
+
+            {% endif %}
+
+
+
+
+
+            <div class="headingWrapper">
+                <h1 class="mainHeading"> Recent Posts </h1>
+                <div class="headerSep"></div>
+            </div>
+
+            <div class="postWrapper">
+                {% for post in posts %}
+                {% include 'small-post.twig' %}
+                {% endfor %}
+                <a class="viewMore" href="./posts">
+                    View All Posts
+                </a>
+            </div>
         </div>
-            
-        <div class="title title-bottom">
-            <div class="title-sep title-bottom-sep"></div>
-            <a class="more_posts" href="./games">More Games</a>
-        </div>
-    </div>
-    
-</div>
+    </main>
 {% endblock %}
